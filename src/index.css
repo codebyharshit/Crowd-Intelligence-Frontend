@@ -1,0 +1,274 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Frutiger Neue LT Pro';
+  src: url('./assets/fonts/FrutigerLTProBlack.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Frutiger Neue LT Pro';
+  src: url('./assets/fonts/FrutigerLTProBold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Frutiger Neue LT Pro';
+  src: url('./assets/fonts/FrutigerLTProRegular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Frutiger Neue LT Pro';
+  src: url('./assets/fonts/FrutigerLTProLight.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+/* Custom styles for menu link */
+.menu-link {
+  @apply !text-link-color;
+}
+
+.menu-link:hover {
+  @apply hover:!text-link-hover;
+  
+}
+
+/* Custom styles for selected menu item */
+.ant-menu-horizontal > .ant-menu-item-selected {
+  background-color: transparent !important; /* Remove default blue background */
+  border-bottom: none !important; /* Remove default underline */
+  border-bottom: 2px solid #004F9F !important; /*Adding underline effect to the entire menu item*/
+  font-weight: bold !important; /* Make the text bold */
+}
+
+.ant-menu-horizontal > .ant-menu-item::after {
+  display: none !important; /* Remove default underline */
+}
+
+.ant-menu-item-selected .menu-link {
+  @apply !text-link-hover; /* Applying Tailwind utilities for selected item */
+  border-bottom: none !important; /* Remove default underline */
+}
+
+/* Primary button background, border and text color */
+.ant-btn-primary {
+  background-color: #65C42F;
+  border-color: #65C42F;
+  color: #fff;
+}
+
+/* Primary button hover state */
+.ant-btn-primary:hover, .ant-btn-primary:focus {
+  background-color: #377920FF !important; /* Darker green */
+  border-color: #377920FF !important;
+}
+
+.btn-danger {
+  background-color: rgb(239 68 68);
+  border-color: rgb(239 68 68);
+  color: #fff;
+}
+
+/* Primary button hover state */
+.btn-danger:hover, .btn-danger:focus {
+  background-color: rgb(153 27 27) !important; /* Darker green */
+  border-color: rgb(153 27 27) !important;
+}
+
+/* Secondary button text and border color */
+.ant-btn-default {
+  color: #65C42F;
+  border-color: #65C42F;
+}
+
+/* Secondary button hover state */
+.ant-btn-default:hover, .ant-btn-default:focus {
+  color: #377920FF !important; /* Darker green */
+  border-color: #377920FF !important;
+}
+
+.ant-layout-content {
+  height: 100% !important;
+  min-height: 100%;
+}
+
+/* Logo styling */
+.nav-logo-container {
+  position: absolute;
+  top: 50px;
+  left: 70px;
+  transform: translate(-50%, -50%);
+  background: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 132px;
+  height: 132px;
+  padding: 0;
+  transition: transform 1s ease, width 1s ease, height 1s ease;
+}
+
+/* Menu styling */
+.menu-container {
+  margin-left: 85px;
+  transition: margin-left 1s ease;
+}
+
+.menu-container.scrolled {
+  margin-left: 25px;
+  transition: margin-left 1s ease;
+}
+
+.nav-logo-container.scrolled {
+  top: 30px;
+  left: 40px;  
+  transform: translate(-50%, -50%) scale(0.5);
+  transition: transform 1s ease, width 1s ease, height 1s ease;
+}
+
+.nav-logo-container img {
+  width: 100%;
+  height: 100%;
+}
+
+
+@media (max-width: 1024px) {
+  .nav-logo-container {
+    top: 30px;
+    left: 40px;  
+    transform: translate(-50%, -50%) scale(0.5);
+    transition: none; /* No transition on small screens */
+  }
+
+  .nav-logo-container.scrolled {
+    transition: none;
+  }
+
+  .menu-container {
+    margin-left: 25px;
+    transition: none; /* No transition on small screens */
+  }
+}
+
+.custom-button {
+  background-color: transparent;
+  border: none;
+  color: #004F9F;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.custom-button:hover {
+  background-color: rgba(0, 79, 159, 0.1);
+}
+
+.cards-container {
+  @apply flex flex-wrap justify-center;
+}
+
+.card {
+  @apply text-center mt-2 w-full max-w-md;
+}
+
+@media (min-width: 768px) {
+  .card {
+    @apply m-2;
+  }
+}
+
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f0f0f0;
+}
+
+/* Apply styles to ensure full height layout */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f0f0f0;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.footer {
+  text-align: center;
+  margin-top: auto;
+  background-color: #f0f0f0;
+}
+
+/* New styles for the homepage */
+.homepage {
+  margin: top 32px bottom 100px;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: url('/assets/img_homepage.jpg') no-repeat center center/cover;
+}
+
+.overlay {
+  margin: top 32px;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%); /* Add this line */
+  width: 80%; /* Use percentage instead of fixed pixel value */
+  max-width: 600px; /* Maximum width */
+  background-color: rgba(0, 0, 0, 0.1); /* Half-transparent white */
+  padding: 20px;
+  width: 600px; /* Adjust as needed */
+  backdrop-filter: blur(35px); /* Apply blur effect */
+  border-radius: 10px; /* Rounded corners */
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  flex-direction: column;
+}
+
+/* Styles for screens smaller than 600px */
+@media screen and (max-width: 600px) {
+  .overlay {
+    width: 100%; /* Full width on small screens */
+    padding: 10px; /* Reduce padding on small screens */
+    max-width: none; /* Remove maximum width */
+  }
+}
+
+.overlay-text {
+  color: white; /* Adjust as needed */
+}
+
+.sign-in-container-overlay {
+  margin-top: 20px; /* Adjust as needed */
+  margin: auto;
+  position: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ant-collapse {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 32px;
+  width: 80%;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15);
+  font-family: 'Frutiger', sans-serif !important;
+}
+
